@@ -1,17 +1,23 @@
+const morgan = require('morgan');
+const helmet = require('helmet');
 // const Joi = require('joi');
+
+const weapnos = require('./routes/weapon-router');
+const home = require('./routes/home');
+
+
 const express = require('express');
 const app = express();
 const port = process.env.PORT || 5000;
 
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+app.use(express.static('public'));    // all of our static assets (css, images, etc) in this public folder
+app.use(helmet());
+app.use(morgan('tiny'));  // everytime we send a request to the server, it will be logged
+app.use('/v1/weapons');
+app.use('/', home);
 
-const weapons = [
-    { id: 1, name: 'Switch Axe' },
-    { id: 2, name: 'Bow' },
-    { id: 3, name: 'Hammer' },
-    { id: 4, name: 'Sword and Shield'},
-    { id: 5, name: 'Insect Glaive' },
-  ];
 
 app.get('/', (req, res) => {
   res.send('Hello! Server is running successfully');
