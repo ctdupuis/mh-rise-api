@@ -4,9 +4,7 @@ const Schema = mongoose.Schema
 const Weapon = new Schema(
     {
         name: { type: String, required: true },
-        damage_type: { type: String, required: true },
-        time: { type: [String], required: true },
-        rating: { type: Number, required: true },
+        damage_type: { type: String, required: true }
     },
     { timestamps: true },
 )
