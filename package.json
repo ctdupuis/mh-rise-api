@@ -1,0 +1,26 @@
+{
+  "name": "mh-rise-api",
+  "version": "1.0.0",
+  "description": "API to handle information about Monster Hunter Rise",
+  "main": "app.js",
+  "scripts": {
+    "test": "app test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ctdupuis/mh-rise-api.git"
+  },
+  "author": "Cody Dupuis",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ctdupuis/mh-rise-api/issues"
+  },
+  "homepage": "https://github.com/ctdupuis/mh-rise-api#readme",
+  "dependencies": {
+    "mongoose": "^5.12.5",
+    "underscore": "^1.13.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.12.0"
+  }
+}
