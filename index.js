@@ -1,21 +1,25 @@
-const morgan = require('morgan');
-const helmet = require('helmet');
-// const Joi = require('joi');
-
-const weapons = require('./routes/weapon_routes');
-const home = require('./routes/home');
-
-
-const express = require('express');
+const express = require("express");
 const app = express();
-const port = process.env.PORT || 5000;
+
+require("dotenv").config();
+require("./db/db_setup");
+
+const weaponRouter = require("./routes/weapon_routes");
 
 app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static('public'));    // all of our static assets (css, images, etc) in this public folder
+app.use((req, res, next) => {
+    res.header("Access-Control-Allow-Origin", "http://localhost:3000");
+    res.header("Access-Control-Allow-Headers", "*");
+    if (req.method === "OPTIONS") {
+        res.header("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET")
+    }
+    next();
+})
 
-// app.get('/', (req, res) => {
-//     res.send("This is at '/' endpoint");
-// })
+app.use("/weapons", weaponRouter)
 
-app.listen(port, () => console.log(`Listening on port ${port}`));
+const PORT = process.env.port || 5000
+
+app.listen(PORT, (error) => {
+    error ? console.log(error) : console.log(`Listening on PORT ${PORT}`)
+})
