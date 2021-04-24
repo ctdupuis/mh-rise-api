@@ -1,4 +1,4 @@
-const Weapon = require('../models/weapon-model');
+const Weapon = require('../models/weapon_model');
 
 getWeaponById = async (req, res) => {
     await Weapon.findOne({ _id: req.params.id }, (err, weapon) => {
