@@ -6,17 +6,9 @@ const {
     getWeaponById
 } = require("../controllers/weapons_ctrl");
 
-const weapons = [
-    { id: 1, name: 'Switch Axe' },
-    { id: 2, name: 'Bow' },
-    { id: 3, name: 'Hammer' },
-    { id: 4, name: 'Sword and Shield'},
-    { id: 5, name: 'Insect Glaive' },
-];
 
-  
-router.get('v1/weapon/:id', getWeaponById)
-router.get('v1/weapons', getWeapons)
+router.get('/weapons', getWeapons)
+router.get('/weapon/:id', getWeaponById)
 
 
-module.exports = weapons;
+module.exports = router

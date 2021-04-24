@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
 
 mongoose
-    .connect('mongodb://127.0.0.1:27017/rise', { useNewUrlParser: true })
+    .connect(`mongodb+srv://ctd:${process.env.MONGO_AUTH}@rise.kclty.mongodb.net/rise?retryWrites=true&w=majority`, { useNewUrlParser: true })
     .catch(e => {
         console.error('Connection error', e.message)
     })

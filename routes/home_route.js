@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router(); 
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Monster Hunter Rise', message: 'Welcome to MonHunAPI' });
+    res.send("This is the landing page");
 });
 
 module.exports = router;
