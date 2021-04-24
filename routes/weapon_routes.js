@@ -1,7 +1,10 @@
 const express = require("express");
 const router = express.Router(); 
 
-const WeaponCtrl = require('../controllers/weapons_ctrl')
+const {
+    getWeapons,
+    getWeaponById
+} = require("../controllers/weapons_ctrl");
 
 const weapons = [
     { id: 1, name: 'Switch Axe' },
@@ -12,8 +15,8 @@ const weapons = [
 ];
 
   
-router.get('v1/weapon/:id', WeaponCtrl.getWeaponById)
-router.get('v1/weapons', WeaponCtrl.getWeapons)
+router.get('v1/weapon/:id', getWeaponById)
+router.get('v1/weapons', getWeapons)
 
 
 module.exports = weapons;

@@ -1,9 +1,9 @@
 const { Schema } = require('mongoose')
 
-const Weapon = new Schema(
+const WeaponSchema = new Schema(
     {
         rarity: {
-            type: Integer,
+            type: Number,
             required: true
         }
     },
