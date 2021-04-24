@@ -1,7 +1,7 @@
 const express = require("express");
 const router = express.Router(); 
 
-const WeaponCtrl = require('../controllers/weapon-ctrl')
+const WeaponCtrl = require('../controllers/weapons_ctrl')
 
 const weapons = [
     { id: 1, name: 'Switch Axe' },
