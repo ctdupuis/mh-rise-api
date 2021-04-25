@@ -5,7 +5,7 @@ require("dotenv").config();
 require("./db/db_setup");
 
 const homeRouter = require("./routes/home_route");
-const weaponRouter = require("./routes/weapon_routes");
+const weaponsRouter = require("./routes/weapon_routes");
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -19,7 +19,7 @@ app.use((req, res, next) => {
 })
 
 app.use("/", homeRouter)
-app.use("/weapons", weaponRouter);
+app.use("/weapons", weaponsRouter);
 
 const PORT = process.env.port || 5000
 

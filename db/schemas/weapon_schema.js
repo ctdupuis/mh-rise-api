@@ -2,8 +2,8 @@ const { Schema } = require('mongoose')
 
 const WeaponSchema = new Schema(
     {
-        rarity: {
-            type: Number,
+        damage_type: {
+            type: String,
             required: true
         }
     },

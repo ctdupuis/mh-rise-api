@@ -4,11 +4,11 @@ const router = express.Router();
 const {
     getWeapons,
     getWeaponById
-} = require("../controllers/weapons_ctrl");
+} = require("../controllers/weapons_controller");
 
 
-router.get('/weapons', getWeapons)
-router.get('/weapon/:id', getWeaponById)
+router.get("/", getWeapons);
+router.get("/:weapon_id", getWeaponById);
 
 
-module.exports = router
+module.exports = router;
