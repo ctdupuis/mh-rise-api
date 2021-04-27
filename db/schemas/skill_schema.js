@@ -6,7 +6,8 @@ const SkillSchema = new Schema(
             type: String
         },
         level: { type: Number },
-        description: { type: Object }
+        description: { type: Object },
+        slug: { type: String }
     }
 )
 

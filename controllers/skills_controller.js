@@ -9,6 +9,16 @@ getSkills = async(req, res) => {
     }
 }
 
+getSkillBySlug = async(req, res) => {
+    try {
+        const skill = await Skill.find({ slug: req.params.slug });
+        res.status(200).send(skill)
+    } catch (error) {
+        res.status(400).send(error.message);
+    }
+}
+
 module.exports = {
-    getSkills
+    getSkills,
+    getSkillBySlug
 }
