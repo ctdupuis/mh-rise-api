@@ -6,6 +6,7 @@ require("./db/db_setup");
 
 const homeRouter = require("./routes/home_route");
 const weaponsRouter = require("./routes/weapon_routes");
+const skillsRouter = require("./routes/skill_routes");
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -18,8 +19,9 @@ app.use((req, res, next) => {
     next();
 })
 
-app.use("/", homeRouter)
+app.use("/", homeRouter);
 app.use("/weapons", weaponsRouter);
+app.use("/skills", skillsRouter)
 
 const PORT = process.env.port || 5000
 
