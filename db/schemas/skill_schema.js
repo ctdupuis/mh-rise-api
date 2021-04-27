@@ -7,7 +7,11 @@ const SkillSchema = new Schema(
         },
         level: { type: Number },
         description: { type: Object },
-        slug: { type: String }
+        slug: { type: String },
+        decoration: { 
+            type: Schema.Types.ObjectId,
+            ref: "Decoration" 
+        }
     }
 )
 

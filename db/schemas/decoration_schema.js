@@ -6,7 +6,7 @@ const DecorationSchema = new Schema(
     {
         name: { type: String },
         level: { type: Number },
-        skill: [SkillSchema]
+        skill: { type: [SkillSchema] }
     }
 )
 
