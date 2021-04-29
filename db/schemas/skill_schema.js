@@ -10,7 +10,7 @@ const SkillSchema = new Schema(
         slug: { type: String },
         decoration: { 
             type: Schema.Types.ObjectId,
-            ref: "Decoration" 
+            ref: "Decoration"
         }
     }
 )
